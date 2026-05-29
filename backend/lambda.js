@@ -1,6 +1,8 @@
 import serverless from "serverless-http";
-import express from "express";
 import app from "./src/app.js";
+import connectDB from "./src/db.js";
+
+connectDB();
 
 export const handler = async (event, context) => {
 
@@ -8,6 +10,3 @@ export const handler = async (event, context) => {
 
   return server(event, context);
 };
-
-
-
